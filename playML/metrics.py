@@ -12,6 +12,7 @@ def accuracy_score(predict_label,y_test_label):
     :param test:训练测试数据集
     :return:
     '''
+
     return np.sum(predict_label == y_test_label) / len(y_test_label)
 
 
