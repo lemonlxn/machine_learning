@@ -12,7 +12,7 @@ from .metrics import accuracy_score
 
 class KNNClassifier():
     '''
-    make comments
+    KNN 算法
 
     X_train        测试数据集
     y_train_label  测试数据标签集
