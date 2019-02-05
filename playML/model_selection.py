@@ -5,14 +5,7 @@
 # @Author  : lemon
 
 import numpy as np
-from sklearn import datasets
 
-def get_data():
-    iris = datasets.load_iris()
-    X = iris.data
-    y = iris.target
-
-    return X,y
 
 
 def train_test_split(X,y,test_rate=0.2,seed=None):
@@ -51,10 +44,6 @@ def train_test_split(X,y,test_rate=0.2,seed=None):
     return X_train,X_test,y_train,y_test
 
 
-if __name__ == '__main__':
-    X,y = get_data()
-    X_train, X_test, y_train, y_test = train_test_split(X,y)
-    pass
 
 
 
