@@ -66,6 +66,9 @@ class SimpleLinearRegression():
         self.b_ = None
 
     def fit(self,x_train,y_train):
+        '''
+        通过训练数据集，找到最合适的 a、b参数
+        '''
         assert x_train.ndim == 1,\
             '暂时只处理一维线性回归'
         assert len(x_train) == len(y_train),\
@@ -86,6 +89,10 @@ class SimpleLinearRegression():
 
 
     def predict(self,x_predict):
+        '''
+        经过fit后，得到a、b参数。
+        通过传入预测数据集，返回相应的预测结果
+        '''
         assert isinstance(x_predict,np.ndarray),\
             '传入的数据集，只能是一个numpy.ndarray 类型'
         assert x_predict.ndim == 1,\
