@@ -8,6 +8,10 @@ import numpy as np
 
 
 class SimpleLinearRegression1():
+    '''
+    简单线性回归测试
+
+    '''
     def __init__(self):
         self.a_ = None
         self.b_ = None
