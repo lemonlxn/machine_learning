@@ -9,7 +9,8 @@ import numpy as np
 
 class SimpleLinearRegression1():
     '''
-    简单线性回归测试
+    该这个版本是初步的。
+    简单线性回归测试，以下面 SimpleLinearRegression 这个类为准
 
     '''
     def __init__(self):
