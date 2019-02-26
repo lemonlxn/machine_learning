@@ -15,7 +15,7 @@ class KNNClassifier():
     KNN 算法
 
     X_train        测试数据集
-    y_train  测试数据标签集
+    y_train        测试数据标签集
 
     X_test         训练数据集
     y_test_label   训练数据标签集
