@@ -62,11 +62,11 @@ class KNNClassifier():
 
 
 
-    def score(self,X_test,y_test_label):
+    def score(self,X_test,y_test):
 
-        predict_label = self.predict(X_test)
+        y_predict = self.predict(X_test)
 
-        return accuracy_score(predict_label,y_test_label)
+        return accuracy_score(y_predict,y_test)
 
     def __repr__(self):
         return 'k = %d' % self.k
