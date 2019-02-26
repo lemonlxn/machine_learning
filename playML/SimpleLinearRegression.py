@@ -5,7 +5,7 @@
 # @Author  : lemon
 
 import numpy as np
-from .metrics import r2_score
+from metrics import r2_score
 
 
 class SimpleLinearRegression1():
@@ -105,9 +105,11 @@ class SimpleLinearRegression():
     def _predict(self,x):
         return self.a_ * x + self.b_
 
-    def score(self,y_test,y_predict):
-        # 根据测试数据，与预测数据拟合情况，返回相应评分。
-        
+    def score(self,x_test,y_test):
+        # 根据测试数据，与预测数据拟合情况，返回相应评分
+
+        y_predict = self.predict(x_test)
+
         return r2_score(y_test,y_predict)
 
     def __repr__(self):
