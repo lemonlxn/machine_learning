@@ -107,6 +107,7 @@ class SimpleLinearRegression():
 
     def score(self,y_test,y_predict):
         # 根据测试数据，与预测数据拟合情况，返回相应评分。
+        
         return r2_score(y_test,y_predict)
 
     def __repr__(self):
