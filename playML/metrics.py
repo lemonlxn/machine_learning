@@ -70,7 +70,7 @@ def r2_score(y_true,y_predict):
 def dJ_debug(theta,X_b,y,epsilon = 0.01):
 
     '''
-    :param theta:
+    :param theta:   np.random.randn(X_b.shape[1])
     :param X_b:     np.hstack([np.ones((len(X), 1)), X])
     :param y:       标签值
     :param epsilon: theta 间距
