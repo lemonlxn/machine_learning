@@ -101,7 +101,7 @@ def dJ_debug(theta,X_b,y,epsilon = 0.01):
 def PolyRegression(degree):
     '''
 
-    :param degree: 多项式特征的程度
+    :param degree: 多项式阶数
     :return: 返回一个数据规整后的多项式线性回归
     '''
     from sklearn.pipeline import Pipeline
