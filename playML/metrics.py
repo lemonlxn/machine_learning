@@ -97,3 +97,21 @@ def dJ_debug(theta,X_b,y,epsilon = 0.01):
 
     return result
 
+
+def PolyRegression(degree):
+    '''
+
+    :param degree: 多项式特征的程度
+    :return: 返回一个数据规整后的多项式线性回归
+    '''
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import PolynomialFeatures
+    from sklearn.linear_model import LinearRegression
+    from sklearn.preprocessing import StandardScaler
+
+    return Pipeline([
+        ('poly', PolynomialFeatures(degree)),
+        ('stand', StandardScaler()),
+        ('lin_reg', LinearRegression())
+    ])
+
