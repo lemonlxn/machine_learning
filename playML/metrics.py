@@ -98,7 +98,7 @@ def dJ_debug(theta,X_b,y,epsilon = 0.01):
     return result
 
 
-def PolyRegression(degree):
+def PolynomialRegression(degree):
     '''
 
     :param degree: 多项式阶数
@@ -115,3 +115,33 @@ def PolyRegression(degree):
         ('lin_reg', LinearRegression())
     ])
 
+
+def plot_learning_curve(algo, X_train, X_test, y_train, y_test):
+    '''
+    :param algo:    机器学习函数 如 LinearRegression() 、 PolynomialRegression(degree=20)
+    :param X_train: 训练数据集
+    :param X_test:  测试数据集
+    :param y_train: 训练数据集标注
+    :param y_test:  测试数据集标注
+    :return: 展示 训练数据集 与 测试数据集 大致学习误差曲线
+    '''
+    from sklearn.metrics import mean_squared_error
+    import matplotlib.pyplot as plt
+
+    train_score = []
+    test_score = []
+
+    for i in range(1, len(X_train) + 1):
+        algo.fit(X_train[:i], y_train[:i])
+
+        y_train_predict = algo.predict(X_train[:i])
+        y_test_predict = algo.predict(X_test)
+
+        train_score.append(mean_squared_error(y_train[:i], y_train_predict))
+        test_score.append(mean_squared_error(y_test, y_test_predict))
+
+    plt.plot([i for i in range(1, len(X_train) + 1)], np.sqrt(train_score), label='train')
+    plt.plot([i for i in range(1, len(X_train) + 1)], np.sqrt(test_score), label='test')
+    plt.legend()
+    plt.axis([0, len(X_train) + 1, 0, 4])
+    plt.show()
