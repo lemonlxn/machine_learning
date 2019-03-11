@@ -118,12 +118,12 @@ def PolynomialRegression(degree):
 
 def plot_learning_curve(algo, X_train, X_test, y_train, y_test):
     '''
-    :param algo:    机器学习函数 如 LinearRegression() 、 PolynomialRegression(degree=20)
+    :param algo:    线性回归机器学习函数 如 LinearRegression() 、 PolynomialRegression(degree=20)
     :param X_train: 训练数据集
     :param X_test:  测试数据集
     :param y_train: 训练数据集标注
     :param y_test:  测试数据集标注
-    :return: 展示 训练数据集 与 测试数据集 大致学习误差曲线
+    :return:        展示 线性回归机器学习函数，训练数据集 与 测试数据集 大致学习误差曲线
     '''
     from sklearn.metrics import mean_squared_error
     import matplotlib.pyplot as plt
