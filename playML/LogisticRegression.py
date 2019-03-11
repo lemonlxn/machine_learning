@@ -78,7 +78,7 @@ class LogisticRegression:
             "the feature number of X_predict must be equal to X_train"
 
         proba = self.predict_proba(X_predict)
-        return np.array(True if proba >= 0.5 else False, dtype='int')
+        return np.array(proba >= 0.5, dtype='int')
 
     def score(self, X_test, y_test):
         """根据测试数据集 X_test 和 y_test 确定当前模型的准确度"""
