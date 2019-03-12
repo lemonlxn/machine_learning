@@ -156,7 +156,7 @@ def plot_decision_boundary(model, axis):
     :param model: 逻辑回归、KNN分类实例化之后的对象 如 log_reg = LogisticRegression()
                                                   log_reg.fit(iris.data[:,:2],iris.target)
                                                   然后将 log_reg 传入
-    :param axis:  坐标轴范围
+    :param axis:  坐标轴范围，如 axis=[4, 8, 1.5, 4.5]
     :return:
 
      '''
