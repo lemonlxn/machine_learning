@@ -150,6 +150,8 @@ def plot_learning_curve(algo, X_train, X_test, y_train, y_test):
 def plot_decision_boundary(model, axis):
     '''
     绘制决策边界
+    对于逻辑回归，暂时只处理二分类问题
+    对于KNN算法，可处理多分类问题
 
     :param model: 逻辑回归、KNN分类实例化之后的对象 如 log_reg = LogisticRegression()
                                                   log_reg.fit(iris.data[:,:2],iris.target)
