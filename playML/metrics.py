@@ -150,16 +150,13 @@ def plot_learning_curve(algo, X_train, X_test, y_train, y_test):
 def plot_decision_boundary(model, axis):
     '''
     绘制决策边界
-    图形可视化，暂时只处理两个特征属性
-    对于逻辑回归，暂时只处理两种分类
-    对于KNN分类，可处理多种分类
 
     :param model: 逻辑回归、KNN分类
     :param axis:  坐标轴范围
     :return:
 
      '''
-    
+
 
     x0, x1 = np.meshgrid(
         np.linspace(axis[0], axis[1], int((axis[1] - axis[0]) * 100)).reshape(-1, 1),
