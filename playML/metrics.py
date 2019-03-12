@@ -151,7 +151,9 @@ def plot_decision_boundary(model, axis):
     '''
     绘制决策边界
 
-    :param model: 逻辑回归、KNN分类
+    :param model: 逻辑回归、KNN分类实例化之后的对象 如 log_reg = LogisticRegression()
+                                                  log_reg.fit(iris.data[:,:2],iris.target)
+                                                  然后将 log_reg 传入
     :param axis:  坐标轴范围
     :return:
 
