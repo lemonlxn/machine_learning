@@ -175,3 +175,57 @@ def plot_decision_boundary(model, axis):
     custom_cmap = ListedColormap(['#EF9A9A', '#FFF59D', '#90CAF9'])
 
     plt.contourf(x0, x1, zz, cmap=custom_cmap)
+
+
+def plot_svc_decision_function(model, ax=None):
+    '''
+    绘制 线性可分的 SVC 二维模型
+    如：
+        X,y = datasets.make_blobs(centers=2,center_box=[-5,5])
+
+        svc = SVC(kernel = "linear")
+        svc.fit(X,y)
+        plt.scatter(X[:,0],X[:,1],c=y,s=30,cmap="rainbow")
+        plot_svc_decision_function(svc)
+    '''
+    if ax is None:
+        ax = plt.gca()
+
+    xlim = ax.get_xlim()
+    ylim = ax.get_ylim()
+
+    x = np.linspace(xlim[0], xlim[1], 30)
+    y = np.linspace(ylim[0], ylim[1], 30)
+    x, y = np.meshgrid(x, y)
+    xy = np.vstack([x.ravel(), y.ravel()]).T
+    Z = model.decision_function(xy).reshape(x.shape)
+
+    ax.contour(x, y, Z, colors="k", levels=[-1, 0, 1], alpha=0.5, linestyles=["--", "-", "--"])
+    ax.set_xlim(xlim)
+    ax.set_ylim(ylim)
+
+
+
+
+
+def plot_3D(elev=30,azim=30,X=X,y=y):
+    '''
+    绘制 SVM 3D 效果
+
+    如：
+        X,y = datasets.make_circles(noise=0.1,factor=0.1)
+        r = np.exp(-(X**2).sum(1))
+
+        interact(plot_3D,elev=[0,30,60,90],azim=(-180,180),X=fixed(X),y=fixed(y))
+    '''
+    from mpl_toolkits import mplot3d
+    from ipywidgets import interact, fixed
+
+    ax = plt.subplot(projection="3d")
+    ax.scatter3D(X[:,0],X[:,1],r,c=y,s=50,cmap='rainbow')
+    ax.view_init(elev=elev,azim=azim)
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.set_zlabel("r")
+    plt.show()
+
